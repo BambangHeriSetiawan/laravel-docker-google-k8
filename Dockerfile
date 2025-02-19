@@ -38,6 +38,8 @@ RUN composer install --no-dev --optimize-autoloader
 
 # Copy Nginx configuration
 COPY docker/nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY docker/nginx/nginx.conf /etc/nginx/nginx.conf
+# COPY docker/php-fpm/www.conf /etc/php/8.2/fpm/pool.d/www.conf
 
 # Copy Supervisor configuration
 COPY docker/supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
